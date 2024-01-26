@@ -12,12 +12,13 @@ import java.util.List;
 
 public class OpenSubtitlesSearchProvider implements SearchProvider {
 
-    private static String SEARCH_URL = "https://www.opensubtitles.org/en/search/sublanguageid-all/tag-";
+    private static String SEARCH_URL = "https://www.opensubtitles.org/en/search2/sublanguageid-all/moviename-";
 
     @Override
     public List<SearchEntry> search(String entry) {
         Connection connection = FactoryConnection.getConnection(GlobalConfiguration.CONNECTION_TYPE);
-        connection.connect(String.format("%s%s", SEARCH_URL, entry));
+        connection.connect(String.format("%s%s", SEARCH_URL, entry.toLowerCase().replace(" ", "+")));
+        System.out.println(entry.replace(" ", "+"));
         if (connection.isConnectionEstablished()) {
             Parser parser = new OpenSubtitlesSearchParser(connection.getBody());
             return (List<SearchEntry>) parser.getResults();

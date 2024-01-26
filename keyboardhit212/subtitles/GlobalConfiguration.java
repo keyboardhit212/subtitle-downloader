@@ -7,6 +7,7 @@ public class GlobalConfiguration {
 
     public static ConnectionType CONNECTION_TYPE = ConnectionType.BASIC;
     public static ProviderCompany PROVIDER_COMPANY = ProviderCompany.OPEN_SUBTITLES;
+    public static String BASE_URL = "https://www.opensubtitles.org";
 
     private GlobalConfiguration() {}
 }

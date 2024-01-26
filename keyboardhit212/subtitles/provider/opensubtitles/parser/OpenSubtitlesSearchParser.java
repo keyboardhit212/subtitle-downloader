@@ -27,8 +27,7 @@ public class OpenSubtitlesSearchParser implements Parser<List<SearchEntry>> {
             Element entry = element.select("strong a").first();
             String title = entry.html();
             String href = entry.attr("href");
-            String lang = stripLang(href).toUpperCase();
-            searchEntries.add(new SearchEntry(title, lang, href));
+            searchEntries.add(new SearchEntry(title, "", href));
         }
         return searchEntries;
     }

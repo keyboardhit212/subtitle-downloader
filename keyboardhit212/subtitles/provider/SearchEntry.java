@@ -21,4 +21,9 @@ public class SearchEntry {
     }
 
     public String getLang() {return new String(this.lang); }
+
+    @Override
+    public String toString() {
+        return String.format("%s %s %s", this.name, this.lang, this.url);
+    }
 }
