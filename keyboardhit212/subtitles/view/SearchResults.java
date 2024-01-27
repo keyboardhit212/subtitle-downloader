@@ -9,8 +9,6 @@ import java.util.Scanner;
 
 public class SearchResults implements View {
 
-    private static String SEARCH_URL = GlobalConfiguration.BASE_URL + "en/search/sublanguageid-all/tag-";
-
     @Override
     public void view(Object... params) {
         String movieName = (String) params[0];

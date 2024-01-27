@@ -12,7 +12,7 @@ import java.util.List;
 
 public class OpenSubtitlesSearchProvider implements SearchProvider {
 
-    private static String SEARCH_URL = "https://www.opensubtitles.org/en/search2/sublanguageid-all/moviename-";
+    private static String SEARCH_URL = GlobalConfiguration.BASE_URL + "/en/search2/sublanguageid-all/moviename-";
 
     @Override
     public List<SearchEntry> search(String entry) {
